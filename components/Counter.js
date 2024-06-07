@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import useStore from '@/lib/store';
 
@@ -10,6 +11,7 @@ const Counter = () => {
             <button onClick={increaseCount}>Increase</button>
             <button onClick={decreaseCount}>decreaseCount</button>
             <button onClick={resetCount}>Reset</button>
+            <button onClick={()=>{console.log("111111")}}>1111</button>
         </div>
     );
 };

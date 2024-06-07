@@ -2,6 +2,7 @@
 async function fetcherData() {
     let res = await fetch("https://api.coindesk.com/v1/bpi/currentprice.json");
     let data = await res.json()
+    data.time = new Date().getTime()
     return data
 }
 export default async function useClient() {
