@@ -8,9 +8,7 @@ async function fetcherData() {
     return data
 }
 
-export default async function useClient() {
-    let data = await fetcherData()
-    console.log(data)
+export default async function useServer() {
     return (
         <>
             <div>useServer</div>
