@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PT Max Card</string>
+    <string name="app_name2">XXX</string>
+    <string name="e_code">E - code</string>
+    <string name="todo">TODO</string>
+    <string name="ok">ตกลง</string>
+    <string name="test_run_on_back_ground">Test run on back ground</string>
+    <string name="read_json">Read Json</string>
+    <string name="read_mag">Read MAG</string>
+    <string name="read_thid">Read THID</string>
+
+</resources>

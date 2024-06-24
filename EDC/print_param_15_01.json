@@ -1,0 +1,15 @@
+{
+  "cardFee": [],
+  "cardbacklist": [
+    {}
+  ],
+  "param": {
+    "Merchant_id": "TH0013952400001",
+    "Terminal_id": "SP-00001",
+    "termSeq": "98282150010439",
+    "Branch_id": "35H",
+    "Merchant_name": "ศาลอาญารัชดา",
+    "type": "UAT",
+    "MaxCardSecurityCode": "ABF201400101"
+  }
+}

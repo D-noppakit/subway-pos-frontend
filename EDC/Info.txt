@@ -1,0 +1,10 @@
+This project for demo.
+
+"sampleJson.xlsx" is a format uploaded through TMS.
+At "sampleJson.xlsx", The termseq field is required. The value is the S/N of the EDC.
+You can add field.
+If you download Json file through TMS, Json file is save at "sdcard/oversea_ct/gtms/print_param.json"
+
+You can also use "print_param.json" for Debug EDC.
+You can directly insert Json file to your Debug EDC.
+ex) adb push "Directory of Json" sdcard/oversea_ct/gtms/

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/main_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/main_readthid_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/read_thid"
+            tools:ignore="VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/main_readmag_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/read_mag"
+            tools:ignore="VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/main_readcontactless_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Read Contactless"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/main_print_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Print"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/main_readjson_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/read_json"
+            tools:ignore="VisualLintButtonSize" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/test_run_on_back_ground"
+            />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

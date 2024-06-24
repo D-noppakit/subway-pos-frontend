@@ -1,0 +1,14 @@
+{
+  "cardFee": [],
+  "cardbacklist": [
+    {}
+  ],
+  "param": {
+    "test02": "directtest02value",
+    "test01": "directtest01value",
+    "test12": "directtest12value",
+    "test11": "directtest11value",
+    "termSeq": "NP9222173123",
+	"MaxCardSecurityCode": "ABF201400101"
+  }
+}

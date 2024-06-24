@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:id="@+id/reportDetailLinearLayout"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:paddingBottom="48dp">
+
+        <!-- ภาพ -->
+        <RelativeLayout
+            android:id="@+id/imgLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/myimgdom"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="Image Description"
+                android:paddingStart="5dp"
+                android:scaleType="fitStart"
+                android:src="@drawable/loading" />
+        </RelativeLayout>
+
+        <!-- รายการ -->
+        <RelativeLayout
+            android:id="@+id/textLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgLayout">
+
+            <TextView
+                android:id="@+id/item1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Sandwich 1 ชิ้น 32 บาท"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/item2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item1"
+                android:layout_marginBottom="8dp"
+                android:text="Sawarma 1 ชิ้น 320 บาท"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/item3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item2"
+                android:layout_marginBottom="8dp"
+                android:text="Beef Burger 3 ชิ้น 320 บาท"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/item4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item3"
+                android:text="Iced Coffee Late 3 ชิ้น 320 บาท"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <!-- เส้นขอบ -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/item4"
+                android:background="@android:color/darker_gray" />
+
+            <!-- ข้อความรวมราคา -->
+            <TextView
+                android:id="@+id/totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item4"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="รวมทั้งสิ้น: 984 บาท"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <!-- ข้อความขอบคุณ -->
+            <TextView
+                android:id="@+id/thankYouText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/totalPrice"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="16dp"
+                android:text="ขอบคุณที่ใช้บริการ"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

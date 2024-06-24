@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/slip"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/reportDetailLinearLayout"
+        android:layout_width="350dp"
+        android:layout_height="600dp"
+        android:layout_centerInParent="true"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:paddingBottom="48dp">
+
+        <ImageView
+            android:id="@+id/myimgdom2"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:contentDescription="Image Description"
+            android:paddingStart="25dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/pt_02" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-5dp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="0dp"
+
+            android:maxLines="100"
+            android:singleLine="false"
+            android:soundEffectsEnabled="true"
+            android:text="Im fine\nIm Ok\nKing chaina\nting ting ting ting ting"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/myimgdom"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="start"
+            android:layout_marginLeft="70dp"
+            android:contentDescription="Image Description"
+            android:paddingStart="10dp"
+            android:scaleType="fitStart"
+
+            />
+    </LinearLayout>
+
+</RelativeLayout>
