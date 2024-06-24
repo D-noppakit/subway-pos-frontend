@@ -23,7 +23,8 @@
             <img src="./imgs/logo.png" class="object-contain w-[34px] h-[45px]" alt="img">
         </div>
         <div class="flex flex-col justify-center items-center">
-            <div onclick="PrintSlip()" class="py-2 px-3 border border-1 bg-white h-[50px] w-[100px]  rounded-3xl flex items-center justify-center">
+            <div onclick="PrintSlip()"
+                class="py-2 px-3 border border-1 bg-white h-[50px] w-[100px]  rounded-3xl flex items-center justify-center">
                 <span class="me-1">
                     <img class="object-contain w-5 h-5" src="./imgs/print.png" alt="print" srcset="">
                 </span>
@@ -31,15 +32,166 @@
             </div>
         </div>
     </div>
+    <div class="w-full h-28 bg-[#97D700] flex flex-col justify-center items-center p-3">
+        <div class="text-[#00491E] flex w-full justify-center items-center">
+            <span class="me-1">
+                <img class="w-6 h-6" src="./imgs/order-01.png" alt="icon">
+            </span>
+            <span>เตรียมความพร้อมก่อนเริ่มทำออเดอร์</span>
+        </div>
+        <button
+            class="w-full mt-3 text-white bg-[#008938] px-[5px] py-[12px] rounded-3xl text-[18px]">เริ่มทำออเดอร์</button>
 
+    </div>
 
-    <section class="w-full h-max-full p-3 scroll-auto">
+    <section class="w-full h-[300px] p-2 overflow-auto  pb-10">
+        <div class="border-1 border border-[#E8EAF1] rounded-2xl p-2 ">
+            <h1 class="text-center text-[14px] text-[#008938]">หมายเลขออเดอร์</h1>
+            <h6 class="border-b-2  border-b-[#E8EAF1] text-center text-[36px] text-[#F2B700]">SW-123</h6>
+            <div class="w-full flex flex-col justify-between items-center py-3 text-[14px] ">
+                <div class="flex justify-between items-center w-full">
+                    <div class="text-[#008938] flex">
+                        <span class="me-1">
+                            <img class="object-contain w-[18px] h-[18px]" src="./imgs/Clock.png" alt="Clock">
+                        </span>
+                        <span>ติดต่อลูกค้า</span>
+                    </div>
+                    <div>091-875-5284</div>
+                </div>
+                <div class="flex justify-between items-center w-full">
+                    <div class="text-[#008938] flex">
+                        <span class="me-1">
+                            <img class="object-contain w-[18px] h-[18px]" src="./imgs/Phone.png" alt="Phone">
+                        </span>
+                        <span>รับทันที</span>
+                    </div>
+                    <div class="text-[#EF4C49]">เวลา 12:15 น.</div>
+                </div>
+                <div class="flex justify-end w-full font-[400] text-[12px] pb-3 border-b-2  border-b-[#E8EAF1]">
+                    กรุณาเตรียมออเดอร์ก่อนเวลา 12:15 น.
+                </div>
+                <div class="my-3 flex items-center justify-start w-full">
+                    <span class="me-1">
+                        <img class="object-contain w-[18px] h-[18px]" src="./imgs/information-warning.png" alt="Phone">
+                    </span>
+                    <h1 class="text-[#EF4C49] text-[14px]">มีอาการแพ้งา และแตงกวาดอง</h1>
+                </div>
+                <h1 class="text-[#008938] text-start w-full text-[14px]">รายละเอียดออเดอร์</h1>
+                <div class="w-full border border-1 p-3 rounded-xl">
+                    <div class="flex justify-between items-center">
+                        <div>(6" นิ้ว) อิตาเลียน บีเอ็มที</div>
+                        <div>฿289</div>
+                    </div>
+                    <div class="flex justify-between items-center text-[12px] font-[400]">
+                        <div class="flex mt-3">
+                            <span class="me-2 text-[#008938]">ขนมปัง</span>
+                            <li>ฮันนี่โอ๊ต</li>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center text-[12px] font-[400]">
+                        <div class="flex mt-3">
+                            <span class="me-2 text-[#008938]">ผัก</span>
+                            <div>
+                                <li>ผักกาดแก้ว</li>
+                                <li>มะเขือเทศ</li>
+                                <li>แตงกวา</li>
+                                <li>แตงกวาดอง</li>
+                                <li>พริกเขียว</li>
+                                <li>มะกอก</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center text-[12px] font-[400]">
+                        <div class="flex mt-3">
+                            <span class="me-2 text-[#008938]">ซอส</span>
+                            <div>
+                                <li>บาร์บีคิว</li>
+                                <li>ซีซาร์</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center text-[12px] font-[400]">
+                        <div class="flex mt-3">
+                            <span class="me-2 text-[#008938]">เพิ่มท็อปปิ้ง</span>
+                            <div>
+                                <li>มอสซาเรลล่าชีส +25฿</li>
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center text-[12px] font-[400]">
+                        <div class="flex mt-3">
+                            <span class="me-2 text-[#008938]">สั่งเป็นชุด</span>
+                            <div>
+                                <li> ชุดที่ 1 (ช็อกชิพ คุกกี้ + เป็ปซี่ 22 ออน) +79฿</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-[12px] font-[400] w-full text-start mt-3 p-3 border-b-2  border-b-[#E8EAF1]">
+                    <h1 class="text-[12px]  text-[#008938]">คำขอเพิ่มเติม</h1>
+                    <div>
+                        <li>ขอไม่อุ่นนะคะ</li>
+                    </div>
+                </div>
+                <div
+                    class="text-[12px] font-[400] w-full flex flex-col justify-between items-center mt-3 p-3 border-b-2  border-b-[#E8EAF1]">
 
+                    <div class="flex w-full justify-between items-center">
+                        <h1 class="text-[12px]  ">ยอดรวม</h1>
+                        <div>
+                            ฿289
+                        </div>
+                    </div>
+                    <div class="flex w-full justify-between items-center font-[500]">
+                        <h1 class="text-[14px] text-[#D83A3A]">Coupon Discount</h1>
+                        <div class="text-[14px] text-[#D83A3A]">
+                            -฿20
+                        </div>
+                    </div>
+                    <div class="flex w-full justify-between items-center">
+                        <h2 class="text-[16px] font-[500]">ยอดชำระ</h2>
+                        <div class="text-[16px] font-[500]">
+                            -฿269
+                        </div>
+                    </div>
+                </div>
 
+                <div
+                    class="text-[12px] font-[400] w-full flex flex-col justify-between items-center mt-3 p-3 border-b-2  border-b-[#E8EAF1]">
+
+                    <div class="flex w-full justify-between items-center">
+                        <h1 class="text-[14px] text-[#008938] font-[500] ">ชำระด้วย</h1>
+
+                    </div>
+                    <div class="flex w-full justify-between items-center">
+                        <h1 class="text-[14px]  font-[500] flex ">
+                            <img class="object-contain w-[24px] me-1 h-[24px]" src="./imgs/creditcard.png"
+                                alt="receipt">
+                            <span>Credit/Debit Card x2456</span>
+                        </h1>
+                        <div class="text-[14px] font-[500]">-฿269</div>
+                    </div>
+
+                </div>
+
+                <div class="flex w-full justify-between items-center text-[#72747D] mt-5">
+                    <h1 class="text-[12px]  font-[500] flex ">
+                        <span>Tran-ID</span>
+                    </h1>
+                    <div class="text-[12px] font-[500]">1/B-124532</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full text-[18px] flex justify-center items-start mt-3 ">
+            <button
+                class=" py-[10px] px-[24px] border border-1 rounded-3xl bg-white text-[#FF5C39]">ยกเลิกออเดอร์</button>
+        </div>
     </section>
     <div class="absolute bottom-0 h-[80px] bg-white w-full inline-flex">
-        <div class="w-1/3 flex flex-col justify-center items-center border border-1 h-full" onclick="window.location.href = './index.html'">
+        <div class="w-1/3 flex flex-col justify-center items-center border border-1 h-full"
+            onclick="window.location.href = './index.html'">
             <img class="object-contain w-[24px] h-[24px]" src="./imgs/receipt.png" alt="receipt">
             <div class="text-[#008938]">ออเดอร์</div>
         </div>
