@@ -8,7 +8,12 @@ body {
     padding: 0;
 
 }
-button{
+
+button {
+    outline: none;
+}
+
+input {
     outline: none;
 }
 
