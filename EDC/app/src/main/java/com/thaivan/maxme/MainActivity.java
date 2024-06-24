@@ -16,25 +16,36 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.koushikdutta.ion.Ion;
 import com.thaivan.maxme.Service.MyForegroundService;
 
 public class MainActivity extends AppCompatActivity {
     public static MediaPlayer mediaPlayerNewOrder;
     private ProgressBar progressBar;
-
+    private ImageView progressImage;
+    private View backgroundView ;
+    FrameLayout frameLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_subway);
-        progressBar = findViewById(R.id.progress_bar);
-        progressBar = findViewById(R.id.progress_bar);
+        frameLayout = findViewById(R.id.frame_layout_loading);
+        frameLayout.setVisibility(View.VISIBLE);
+        progressImage = findViewById(R.id.progress_image);
+        progressImage.setVisibility(View.VISIBLE);
+        Glide.with(this)
+                .load(R.drawable.loading_gif) // แทนที่ R.drawable.loading_gif ด้วยพาธของไฟล์ GIF ของคุณ
+                .into(progressImage);
+
         Intent serviceIntent = new Intent(this, MyForegroundService.class);
         serviceIntent.putExtra("inputExtra", "Foreground Service Example");
 
@@ -59,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 // Hide ProgressBar when page is fully loaded
-                progressBar.setVisibility(ProgressBar.GONE);
+                progressImage.setVisibility(ProgressBar.GONE);
+                frameLayout.setVisibility(View.GONE);
             }
         });
 
@@ -73,15 +85,19 @@ public class MainActivity extends AppCompatActivity {
                         + consoleMessage.sourceId());
                 return true;
             }
+            @Override
             public void onProgressChanged(WebView view, int progress) {
-                if (progress < 100 && progressBar.getVisibility() == ProgressBar.GONE) {
-                    progressBar.setVisibility(ProgressBar.VISIBLE);
+                if (progress < 100 && progressImage.getVisibility() == View.GONE) {
+                    progressImage.setVisibility(View.VISIBLE);
+                    frameLayout.setVisibility(View.VISIBLE);
+                } else if (progress == 100) {
+                    progressImage.setVisibility(View.GONE);
+                    frameLayout.setVisibility(View.GONE);
                 }
-                progressBar.setProgress(progress);
             }
         });
         // โหลด URL ที่ต้องการ rr
-//        myWebView.loadUrl("file:///android_asset/pos/index.html");
+//         myWebView.loadUrl("file:///android_asset/pos/index.html");
         myWebView.loadUrl("http://192.168.11.43:5500/EDC/app/src/main/assets/pos/order.html");
 
     }
