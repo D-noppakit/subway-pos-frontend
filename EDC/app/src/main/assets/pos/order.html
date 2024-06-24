@@ -19,8 +19,8 @@
 
 <body class="kanit-medium">
 
-    <!-- modal print -->
-    <div id="Modal-cacel-order" style="display: none;"
+    <!-- modal cancel-order -->
+    <div id="Modal-cancel-order" style="display: none;"
         class="w-screen h-screen  items-center justify-center bg-black bg-opacity-50 z-10 absolute">
         <div class="bg-white w-[95%] rounded-3xl gap-10 p-5 flex flex-col">
             <div class="text-[18px] text-[#FF5C39] text-center mt-5">กรุณาสอบถามลูกค้าก่อนยกเลิก</div>
@@ -31,20 +31,35 @@
             <div class="mt-5 w-full flex justify-between items-center p-2 mb-5">
                 <button class="w-[140px] px-[24px] py-[10px] rounded-3xl text-white bg-[#FF5C39] border-1 border "
                     type="button">ยืนยัน</button>
-                <button onclick="close_cancel_order()" class="w-[140px] px-[24px] py-[10px] rounded-3xl text-[#008938] border-1 border bg-white"
+                <button onclick="close_cancel_order()"
+                    class="w-[140px] px-[24px] py-[10px] rounded-3xl text-[#008938] border-1 border bg-white"
                     type="button">ย้อนกลับ</button>
             </div>
         </div>
     </div>
+    <!-- modal cancel-order end -->
+    <!-- modal print -->
+    <div id="Modal-print" style="display: none;"
+        class="w-screen h-screen  items-center justify-center bg-black bg-opacity-50 z-10 absolute">
+        <div class="bg-white w-[95%] rounded-3xl gap-10 p-5 flex flex-col">
+            <div class="w-full mt-5 flex items-center justify-center">
+                <img class="object-contain w-12 h-12" src="./imgs/print-green.png" alt="print-green">
+            </div>
+            <div class="mt-5 w-full flex justify-between items-center p-2 mb-5">
+
+                <button onclick="PrintSlip();CloseModalPrintSlip();"
+                    class="w-full px-[24px] py-[10px] rounded-3xl text-[#008938] border-1 border bg-white"
+                    type="button">พิมพ์ใบออเดอร์</button>
+            </div>
+        </div>
+    </div>
     <!-- modal print end -->
-
-
     <div class="flex text-[36px] text-white bg-[#008938] h-[80px] p-4 justify-between">
         <div>
             <img src="./imgs/logo.png" class="object-contain w-[34px] h-[45px]" alt="img">
         </div>
         <div class="flex flex-col justify-center items-center">
-            <div onclick="PrintSlip()"
+            <div onclick="OpenModalPrintSlip()"
                 class="py-2 px-3 border border-1 bg-white h-[50px] w-[100px]  rounded-3xl flex items-center justify-center">
                 <span class="me-1">
                     <img class="object-contain w-5 h-5" src="./imgs/print.png" alt="print" srcset="">
@@ -317,11 +332,17 @@
             so5.style.display = "flex"
         }
     }
-    function close_cancel_order(){
-        document.getElementById("Modal-cacel-order").style.display = "none"
+    function close_cancel_order() {
+        document.getElementById("Modal-cancel-order").style.display = "none"
     }
-    function open_cancel_order(){
-        document.getElementById("Modal-cacel-order").style.display = "flex"
+    function open_cancel_order() {
+        document.getElementById("Modal-cancel-order").style.display = "flex"
+    }
+    function OpenModalPrintSlip(){
+        document.getElementById("Modal-print").style.display = "flex"
+    }
+    function CloseModalPrintSlip(){
+        document.getElementById("Modal-print").style.display = "none"
     }
 
 </script>
