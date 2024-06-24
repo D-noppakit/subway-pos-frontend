@@ -36,6 +36,28 @@
         </div>
     </div>
 
+    <!-- emergency -->
+    <div style="display: none;" class="w-full bg-[#FF5C39] p-2 h-[64px]">
+        <div class="flex justify-center items-center">
+            <span class="me-1"><img class="object-contain w-6 h-6" src="./imgs/emer1.png" alt="" srcset=""></span>
+            <span class="text-white">ปิดรับออเดอร์ชั่วคราว</span>
+        </div>
+        <div class="flex justify-center items-center">
+            <span class="text-white">สามารถเปิดรับออเดอร์อีกครั้งที่ เมนู ”ตั้งค่า”</span>
+        </div>
+    </div>
+
+    <div style="display: block;" class="w-full bg-[#FF5C39] p-2 h-[64px]">
+        <div class="flex justify-center items-center">
+            <span class="me-1"><img class="object-contain w-6 h-6" src="./imgs/emer2.png" alt="" srcset=""></span>
+            <span class="text-white">ปิดรับออเดอร์</span>
+        </div>
+        <div class="flex justify-center items-center">
+            <span class="text-white">จะเปิดรับออเดอร์ได้ในเวลา 09:00 - 19:00 น.</span>
+        </div>
+    </div>
+    <!-- emergency end -->
+
     <div class="w-full h-[64px] flex justify-around items-center">
         <div id="c1" onclick="ClickActive(this)"
             class="flex justify-center items-center rounded-3xl w-[104px] h-[36px] bg-white border border-1 border-[#DFE0E7] ">
@@ -287,11 +309,13 @@
             <img class="object-contain w-[24px] h-[24px]" src="./imgs/receipt.png" alt="receipt">
             <div class="text-[#008938]">ออเดอร์</div>
         </div>
-        <div class="w-1/3 flex flex-col justify-center items-center border border-1 h-full  hover:bg-[#F8F9FB]">
+        <div onclick="window.location.href='./history.html'"
+            class="w-1/3 flex flex-col justify-center items-center border border-1 h-full  hover:bg-[#F8F9FB]">
             <img class="object-contain w-[24px] h-[24px]" src="./imgs/fastforward.png" alt="receipt">
             <div class="text-[#008938]">รายการขาย</div>
         </div>
-        <div class="w-1/3 flex flex-col justify-center items-center border border-1 h-full  hover:bg-[#F8F9FB]">
+        <div onclick="window.location.href='./setting.html'"
+            class="w-1/3 flex flex-col justify-center items-center border border-1 h-full  hover:bg-[#F8F9FB]">
             <img class="object-contain w-[24px] h-[24px]" src="./imgs/setting.png" alt="receipt">
             <div class="text-[#008938]">ตั้งค่า</div>
         </div>
