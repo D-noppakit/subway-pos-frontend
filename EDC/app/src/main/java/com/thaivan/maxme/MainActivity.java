@@ -81,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         // โหลด URL ที่ต้องการ rr
-        myWebView.loadUrl("file:///android_asset/pos/index.html");
+//        myWebView.loadUrl("file:///android_asset/pos/index.html");
+        myWebView.loadUrl("http://192.168.11.43:5500/EDC/app/src/main/assets/pos/order.html");
 
     }
     public class WebAppInterface {
