@@ -16,6 +16,21 @@
 </head>
 
 <body class=" h-screen w-screen flex items-center justify-center ">
+    <div id="Modal-Login" style="display: none;"
+        class="w-screen h-screen  items-center justify-center bg-black bg-opacity-50 z-10 absolute">
+        <div class="bg-white w-[95%] rounded-3xl gap-10 p-5 flex flex-col">
+            <div class="w-full mt-5 text-center text-[#FF5C39] text-[24px]">
+                รหัสผ่านไม่ถูกต้อง
+                กรุณาลองใหม่อีกครั้ง
+            </div>
+            <div class="mt-5 w-full flex justify-between items-center p-2 mb-5">
+
+                <button onclick="CloseModalLogin();"
+                    class="w-full px-[24px] py-[10px] rounded-3xl text-[#008938] border-1 border bg-white"
+                    type="button">ลองอีกครั้ง</button>
+            </div>
+        </div>
+    </div>
     <div class="p-3 w-screen max-w-[350px] flex justify-center items-center flex-col">
         <img class="object-contain w-[100px] " src="./imgs/LogoLogin.png" alt="LogoLogin">
         <div class="mt-10"></div>
@@ -56,6 +71,13 @@
             window.location.href = "./index.html"
         }, 1000)
     }
+    function OpenModalLogin() {
+        document.getElementById("Modal-Login").style.display = "flex"
+    }
+    function CloseModalLogin() {
+        document.getElementById("Modal-Login").style.display = "none"
+    }
+    // OpenModalLogin() 
 </script>
 
 </html>
