@@ -86,21 +86,21 @@
     </div>
     <section class="w-full h-full p-4 flex justify-center items-center flex-col mt-10">
         <img src="./imgs/LogoLogin.png" class="object-contain w-[77px]" alt="" srcset="">
-        <div class="mt-10 text-[18px] text-[#008938]">User ID : Store01</div>
-        <div class="border border-1 w-full flex rounded-2xl p-3 justify-between text-[#008938] mt-10">
+        <div id="store_index" class="mt-10 text-[18px] text-[#008938]">User ID : Store01</div>
+        <div class="border border-1 w-full flex rounded-2xl p-3 justify-between items-center text-[#008938] mt-10">
             <div>เปิด/ปิด รับออเดอร์</div>
             <div>
                 <label class="switch">
-                    <input type="checkbox" checked>
+                    <input onchange="updateSW()" id="open_alert" type="checkbox" checked="false">
                     <span class="slider round"></span>
                 </label>
 
             </div>
         </div>
-        <div class="border border-1 w-full flex rounded-2xl p-3 justify-between text-[#008938] mt-5">
-            <div>เปิด/ปิด รับออเดอร์</div>
+        <div class="border border-1 w-full flex rounded-2xl p-3 justify-between items-center text-[#008938] mt-5">
+            <div>เสียงแจ้งเตือน</div>
             <div><label class="switch">
-                    <input type="checkbox" checked>
+                    <input onchange="updateSW()" id="alert_noti" type="checkbox" checked="false">
                     <span class="slider round"></span>
                 </label>
             </div>
@@ -131,74 +131,81 @@
 
 </body>
 <script>
-    window.addEventListener('load', function () {
-        console.log('Page is fully loaded');
-        const c1 = document.getElementById("c1")
-        c1.classList.add('bg-[#008938]');
-        c1.classList.add("text-white");
-        c1.classList.remove('bg-white');
-
-        c2.classList.remove('bg-[#008938]');
-        c2.classList.remove("text-white");
-        c2.classList.add('bg-white');
-
-        c3.classList.remove('bg-[#008938]');
-        c3.classList.remove("text-white");
-        c3.classList.add('bg-white');
+    window.addEventListener('load', async function () {
+        console.log('Page is fully loaded History');
+        document.getElementById("store_index").innerText = "User : " + localStorage.branch_name
+        await sw()
 
     });
-    function ClickActive(e) {
-        const c1 = document.getElementById("c1")
-        const c2 = document.getElementById("c2")
-        const c3 = document.getElementById("c3")
-        if (e.id === "c1") {
-            e.classList.add('bg-[#008938]');
-            e.classList.add("text-white");
-            e.classList.remove('bg-white');
 
-            c2.classList.remove('bg-[#008938]');
-            c2.classList.remove("text-white");
-            c2.classList.add('bg-white');
-
-            c3.classList.remove('bg-[#008938]');
-            c3.classList.remove("text-white");
-            c3.classList.add('bg-white');
-
-            document.querySelector("#c1 > span + span").style.display = "flex"
-            document.querySelector("#c1 > span + span").style.display = "flex"
-        } else if (e.id === "c2") {
-            e.classList.add('bg-[#008938]');
-            e.classList.add("text-white");
-            e.classList.remove('bg-white');
-
-            c1.classList.remove('bg-[#008938]');
-            c1.classList.remove("text-white");
-            c1.classList.add('bg-white');
-
-            c3.classList.remove('bg-[#008938]');
-            c3.classList.remove("text-white");
-            c3.classList.add('bg-white');
-        }
-        else if (e.id === "c3") {
-            e.classList.add('bg-[#008938]');
-            e.classList.add("text-white");
-            e.classList.remove('bg-white');
-
-            c2.classList.remove('bg-[#008938]');
-            c2.classList.remove("text-white");
-            c2.classList.add('bg-white');
-
-            c1.classList.remove('bg-[#008938]');
-            c1.classList.remove("text-white");
-            c1.classList.add('bg-white');
-        }
-
-    }
     function logout() {
         localStorage.IsLogin = false
         auth()
     }
-    // get noti document.querySelector("#c1 > span + span").style.display = "flex"
+
+    function sw() {
+        Loading(true)
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+            "token": localStorage.token
+        });
+
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow"
+        };
+
+        fetch(endpoint + "/api/pos/alert-status", requestOptions)
+            .then((response) => response.json())
+            .then((result) => {
+                Loading(false)
+                console.log(result)
+                if (result.msg === "good") {
+                    const { open_order, alert_noti } = result.result
+                    console.log({ open_order, alert_noti })
+                    document.getElementById("open_alert").checked = open_order
+                    document.getElementById("alert_noti").checked = alert_noti
+                } else {
+
+                }
+            })
+            .catch((error) => {
+                Loading(false)
+                console.error(error)
+            });
+    }
+
+    function updateSW() {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+            "token": localStorage.token,
+            "open_order": document.getElementById("open_alert").checked,
+            "alert_noti": document.getElementById("alert_noti").checked
+        });
+
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow"
+        };
+
+        fetch(endpoint + "/api/pos/update/alert-status", requestOptions)
+            .then((response) => response.json())
+            .then((result) => {
+                console.log(result)
+            })
+            .catch((error) => {
+                console.error(error)
+            });
+    }
+
 </script>
 
 </html>

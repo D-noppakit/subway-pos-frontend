@@ -29,17 +29,39 @@
         </div>
         <div class="flex flex-col justify-end">
             <div class="text-[12px] flex justify-end items-center">
-                <div class="me-2">สาขา : CW Tower 01 </div>
-                <div>User : Store01</div>
+                <div id="address_index" class="me-2">สาขา : CW Tower 01 </div>
+                <div id="store_index">User : Store01</div>
             </div>
-            <div class="text-[12px] font-[400] self-end">13 พ.ค. 2024</div>
+            <div id="time_index" class="text-[12px] font-[400] self-end">13 พ.ค. 2024</div>
         </div>
     </div>
+
+    <!-- emergency -->
+    <div id="emergency-1" style="display: none;" class="w-full bg-[#FF5C39] p-2 h-[64px]">
+        <div class="flex justify-center items-center">
+            <span class="me-1"><img class="object-contain w-6 h-6" src="./imgs/emer1.png" alt="" srcset=""></span>
+            <span class="text-white">ปิดรับออเดอร์ชั่วคราว</span>
+        </div>
+        <div class="flex justify-center items-center">
+            <span class="text-white">สามารถเปิดรับออเดอร์อีกครั้งที่ เมนู ”ตั้งค่า”</span>
+        </div>
+    </div>
+
+    <div style="display: none;" class="w-full bg-[#FF5C39] p-2 h-[64px]">
+        <div class="flex justify-center items-center">
+            <span class="me-1"><img class="object-contain w-6 h-6" src="./imgs/emer2.png" alt="" srcset=""></span>
+            <span class="text-white">ปิดรับออเดอร์</span>
+        </div>
+        <div class="flex justify-center items-center">
+            <span class="text-white">จะเปิดรับออเดอร์ได้ในเวลา 09:00 - 19:00 น.</span>
+        </div>
+    </div>
+    <!-- emergency end -->
 
 
     <div class="w-full flex justify-between items-center px-3 mt-5">
         <div class="text-[#A3A6B7] font-[400]">
-            <span>2</span>
+            <span id="length_index">0</span>
             <span>รายการ</span>
         </div>
         <div onclick="refresh()"
@@ -126,68 +148,18 @@
 </body>
 <script>
     window.addEventListener('load', function () {
-        console.log('Page is fully loaded');
-        const c1 = document.getElementById("c1")
-        c1.classList.add('bg-[#008938]');
-        c1.classList.add("text-white");
-        c1.classList.remove('bg-white');
-
-        c2.classList.remove('bg-[#008938]');
-        c2.classList.remove("text-white");
-        c2.classList.add('bg-white');
-
-        c3.classList.remove('bg-[#008938]');
-        c3.classList.remove("text-white");
-        c3.classList.add('bg-white');
-
+        initView()
     });
-    function ClickActive(e) {
-        const c1 = document.getElementById("c1")
-        const c2 = document.getElementById("c2")
-        const c3 = document.getElementById("c3")
-        if (e.id === "c1") {
-            e.classList.add('bg-[#008938]');
-            e.classList.add("text-white");
-            e.classList.remove('bg-white');
-
-            c2.classList.remove('bg-[#008938]');
-            c2.classList.remove("text-white");
-            c2.classList.add('bg-white');
-
-            c3.classList.remove('bg-[#008938]');
-            c3.classList.remove("text-white");
-            c3.classList.add('bg-white');
-
-            document.querySelector("#c1 > span + span").style.display = "flex"
-            document.querySelector("#c1 > span + span").style.display = "flex"
-        } else if (e.id === "c2") {
-            e.classList.add('bg-[#008938]');
-            e.classList.add("text-white");
-            e.classList.remove('bg-white');
-
-            c1.classList.remove('bg-[#008938]');
-            c1.classList.remove("text-white");
-            c1.classList.add('bg-white');
-
-            c3.classList.remove('bg-[#008938]');
-            c3.classList.remove("text-white");
-            c3.classList.add('bg-white');
-        }
-        else if (e.id === "c3") {
-            e.classList.add('bg-[#008938]');
-            e.classList.add("text-white");
-            e.classList.remove('bg-white');
-
-            c2.classList.remove('bg-[#008938]');
-            c2.classList.remove("text-white");
-            c2.classList.add('bg-white');
-
-            c1.classList.remove('bg-[#008938]');
-            c1.classList.remove("text-white");
-            c1.classList.add('bg-white');
-        }
-
+    function initView() {
+        document.getElementById("list-order").innerHTML = ` <div class="w-full justify-center items-center flex mt-10">
+                <img class="object-contain w-[112px]" src="./imgs/no-item.png" alt="">
+            </div>`
+        localStorage.tab = "4"
+        document.getElementById("store_index").innerText = "User : " + localStorage.branch_name
+        document.getElementById("address_index").innerText = "สาขา : " + localStorage.address
+        document.getElementById("time_index").innerText = formatDateThai()
     }
+   
     function refresh() {
         console.log("refresh")
     }
