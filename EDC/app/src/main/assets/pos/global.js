@@ -1,4 +1,4 @@
-const env = "uat"
+const env = "prd"
 let endpoint = "http://localhost:3000"
 if (env === "prd") {
     endpoint = "https://dinosaur-jump-83e560741e48.herokuapp.com"
